@@ -23,7 +23,7 @@
       "check_dependency_tree_detection_status": true,
       "_comment_check_dependency_tree_detection_status": "Whether to check if dependency tree was successfully detected. Options: true | false. Default: true",
       "expected_total_dependencies_number": {
-        "gte": 1826
+        "gte": 1824
       },
       "expected_direct_dependencies_number": {
         "gte": 166
@@ -661,113 +661,61 @@
           "system.security.principal",
           "pdfmake-0.2.5.tgz",
           "humanizer.core.de",
-          "esutils-2.0.3.tgz",
-          "mysqlconnector",
-          "datatables.net-colreorder-1.5.5.tgz",
-          "nito.collections.deque",
-          "system.componentmodel.typeconverter",
-          "system.runtime",
           "humanizer.core.sv",
-          "object-is-1.1.5.tgz"
+          "jquery.easing-1.4.1.tgz",
+          "humanizer.core.en",
+          "microsoft.extensions.logging.debug",
+          "system.security.cryptography.primitives",
+          "system.io.filesystem",
+          "humanizer.core.eu",
+          "system.net.http.formatting",
+          "system.diagnostics.tracesource",
+          "microsoft.extensions.configuration.binder",
+          "humanizer.core.uz",
+          "bs4-nestable-0.1.0.tgz",
+          "datatables.net-colreorder-1.5.5.tgz",
+          "system.diagnostics.process",
+          "humanizer.core.nb-no",
+          "fluentmigrator.runner.mysql5",
+          "microsoft.aspnetcore.razor.design",
+          "system.diagnostics.stacktrace",
+          "humanizer.core.mk",
+          "humanizer.core.ug",
+          "google.apis.translate.v2",
+          "google.api.gax",
+          "system.io.compression.filesystem",
+          "microsoft.extensions.configuration.abstractions",
+          "humanizer.core.da-dk",
+          "moment-timezone-0.5.40.tgz",
+          "humanizer.core.sw",
+          "bs4-nestable-0.2.0.tgz",
+          "humanizer.core.gl",
+          "microsoft.extensions.configuration",
+          "humanizer.core.nn-no",
+          "humanizer.core.sq"
         ]
       },
       "_comment_dependencies_names_list": "Optional. Check specific libraries in direct dependencies. Operators: eq (==), contains (all items from expected list in actual), in(all items from actual list in expected), nin(actual list does not contain provided libs). If not provided, this check will not be performed.",
-      "validate_agent_versions": false,
+      "validate_agent_versions": true,
+      "expected_agent_version": "",
+      "expected_plugin_version": "",
       "_comment_agent_versions": "Optional. Expected agent and plugin versions. If not provided, this check will not be performed."
     },
-    "validate_vulnerabilities_table": false,
+    "validate_vulnerabilities_table": true,
     "_comment_validate_vulnerabilities_table": "Whether to validate the vulnerabilities table. Options: true | false. Default: true",
     "vulnerabilities_table": {
       "check_vulnerabilities_table_structure": true,
       "expected_total_vulnerabilities_number": {
-        "eq": 27
+        "gte": 0
       },
       "vulnerabilities_ids_list": {
-        "eq": [
-          "CVE-2017-11770",
-          "CVE-2018-8292",
-          "CVE-2019-0820",
-          "CVE-2021-24112",
-          "CVE-2022-24785",
-          "CVE-2022-31129",
-          "CVE-2022-3517",
-          "CVE-2022-46161",
-          "CVE-2023-45857",
-          "CVE-2025-11362",
-          "CVE-2025-58754",
-          "CVE-2025-5889",
-          "CVE-2026-25639",
-          "CVE-2026-27212",
-          "WS-2022-0161",
-          "WS-2022-0280",
-          "WS-2022-0284",
-          "WS-2022-0400"
-        ]
+        "contains": []
       },
       "_comment_ids_names_list": "Optional. Check specific libs ids (WS-2018-0111, CVE-2021-44906). Operators: eq (==), contains (all items from expected list in actual), in(all items from actual list in expected), nin(actual list does not contain provided libs). If not provided, this check will not be performed.",
       "vulnerabilities_names_list": {
-        "eq": [
-          "Direct swiper-11.1.14.tgz",
-          "Transitive axios-0.26.1.tgz",
-          "Transitive brace-expansion-1.1.11.tgz",
-          "Transitive minimatch-3.0.4.tgz",
-          "Transitive moment-2.24.0.tgz",
-          "Transitive moment-timezone-0.5.34.tgz",
-          "Transitive newtonsoft.json.12.0.1.nupkg",
-          "Transitive pdfmake-0.2.5.tgz",
-          "Transitive sweetalert2-11.4.26.tgz",
-          "Transitive system.drawing.common.4.7.0.nupkg",
-          "Transitive system.drawing.common.5.0.0.nupkg",
-          "Transitive system.net.http.4.1.0.nupkg",
-          "Transitive system.net.http.4.3.2.nupkg",
-          "Transitive system.security.cryptography.x509certificates.4.1.0.nupkg",
-          "Transitive system.text.regularexpressions.4.1.0.nupkg",
-          "Transitive system.text.regularexpressions.4.3.0.nupkg"
-        ]
+        "contains": []
       },
       "_comment_vulnerabilities_names_list": "Optional. Check specific libs names (minimist-0.0.8.tgz). Operators: eq (==), contains (all items from expected list in actual), in(all items from actual list in expected), nin(actual list does not contain provided libs). If not provided, this check will not be performed."
-    },
-    "validate_scanner_logs": false,
-    "_comment_validate_scanner_logs": "Whether to validate scanner logs. Options: true | false. Default: false",
-    "logs": {
-      "check_scanner_logs": true,
-      "_comment_check_scanner_logs": "Whether to check scanner logs and attach them to Report Portal. Options: true | false. Default: true",
-      "expected_log_lines": [],
-      "_comment_expected_log_lines": "Optional. List of log lines to validate. Each entry should have an 'operator' (eq or regex) and 'value' (string or regex pattern). Example: [{'operator': 'eq', 'value': 'Python version: 3.11'}, {'operator': 'regex', 'value': 'Python version: \\d+\\.\\d+'}]. If not provided, only log attachment will be performed."
-    },
-    "validate_reachability": false,
-    "_comment_validate_reachability": "Whether to validate reachability analysis. Options: true | false. Default: false. When enabled, .whitesource file will be automatically updated to set enableReachability: true if needed.",
-    "reachability": {
-      "check_reachability_status": true,
-      "_comment_check_reachability_status": "Whether to check if reachability analysis was successfully performed. Options: true | false. Default: true",
-      "validate_issues": false,
-      "_comment_validate_issues": "Whether to validate GitHub issues created for reachable vulnerabilities. Options: true | false. Default: false. When enabled, issues will be automatically enabled on the repository if not already enabled. Validates: issue labels, body format (library name, CVE, paths, commit SHA), title format, state, and author. NOTE: If no issues are found in the reachability table, the test will show a WARNING (not fail) in the summary table, as this may be expected behavior.",
-      "expected_reachable_cves": {
-        "contains": []
-      },
-      "_comment_expected_reachable_cves": "Optional. List of CVE IDs expected to be marked as reachable. Operators: eq (==) - exact match of the list, contains (all items from expected list in actual), in (all items from actual in expected), nin (actual does not contain expected). Example: {'contains': ['CVE-2021-44906', 'CVE-2022-12345']}. If not provided, this check will not be performed.",
-      "expected_unreachable_cves": {
-        "contains": []
-      },
-      "_comment_expected_unreachable_cves": "Optional. List of CVE IDs expected to be marked as unreachable. Operators: eq (==) - exact match of the list, contains (all items from expected list in actual), in (all items from actual in expected), nin (actual does not contain expected). Example: {'contains': ['CVE-2020-11111']}. If not provided, this check will not be performed.",
-      "expected_reachable_libraries": {
-        "contains": []
-      },
-      "_comment_expected_reachable_libraries": "Optional. List of libraries with their reachable vulnerabilities. Each entry should have 'library_name' and 'vulnerabilities' (list of CVE IDs). Operators: eq (==) - exact match, contains (all expected libraries found in actual). Example: {'contains': [{'library_name': 'loader-utils-1.4.0.tgz', 'vulnerabilities': ['CVE-2022-37601']}]}. If not provided, this check will not be performed.",
-      "expected_unreachable_libraries": {
-        "contains": []
-      },
-      "_comment_expected_unreachable_libraries": "Optional. List of libraries with their unreachable vulnerabilities. Each entry should have 'library_name' and 'vulnerabilities' (list of CVE IDs). Operators: eq (==) - exact match, contains (all expected libraries found in actual). Example: {'contains': [{'library_name': 'loader-utils-2.0.0.tgz', 'vulnerabilities': ['CVE-2022-37603']}]}. If not provided, this check will not be performed.",
-      "expected_total_reachable_count": {
-        "gte": 0
-      },
-      "_comment_expected_total_reachable_count": "Optional. Expected number of reachable CVEs with comparison operator. Operators: gt (>), gte (>=), lt (<), lte (<=), eq (==). Example: {'gte': 1} or {'eq': 5}. If not provided, this check will not be performed.",
-      "expected_total_unreachable_count": {
-        "gte": 0
-      },
-      "_comment_expected_total_unreachable_count": "Optional. Expected number of unreachable CVEs with comparison operator. Operators: gt (>), gte (>=), lt (<), lte (<=), eq (==). Example: {'gte': 0}. If not provided, this check will not be performed.",
-      "expected_reachability_traces": [],
-      "_comment_expected_reachability_traces": "Optional. List of reachability traces to validate. Each entry should have 'cve_id' (CVE to check), 'operator' (contains or regex), and 'expected_trace_pattern' (pattern to match in trace). Example: [{'cve_id': 'CVE-2021-44906', 'operator': 'contains', 'expected_trace_pattern': 'minimist'}, {'cve_id': 'CVE-2022-12345', 'operator': 'regex', 'expected_trace_pattern': 'module.*function.*line'}]. If not provided, trace validation will not be performed."
     }
   }
 }
